@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-// Agrega 'onAgregar' a las props que recibe el componente
-function AgregarAlumno({ onAgregar }) { // <-- ¡Aquí el cambio!
+function AgregarAlumno({ onAgregar }) {
   const navigate = useNavigate();
 
   const [alumno, setAlumno] = useState({
@@ -38,17 +37,15 @@ function AgregarAlumno({ onAgregar }) { // <-- ¡Aquí el cambio!
     }
 
     // --- ¡Aquí el cambio! Llama a la función onAgregar para pasar el nuevo alumno a App.jsx ---
-    if (onAgregar) { // Asegúrate de que la prop exista antes de llamarla
-      onAgregar(alumno); // Pasa el objeto 'alumno' al padre (App.jsx)
+    if (onAgregar) { 
+      onAgregar(alumno); 
     }
 
     setSuccess('¡Alumno agregado exitosamente!');
     setError('');
 
-    // Redirigir al listado de alumnos después de un breve retraso
     setTimeout(() => {
       navigate('/alumnos');
-      // Opcional: limpiar el formulario después de la redirección
       setAlumno({
         lu: '', nombre: '', apellido: '', curso: '', email: '',
         domicilio: '', telefono: '',

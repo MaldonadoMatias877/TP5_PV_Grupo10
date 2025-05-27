@@ -7,8 +7,8 @@ function AlumnoEliminado({ alumnosEliminados, onRecuperar }) {
   const navigate = useNavigate();
 
   const handleConfirmRecuperar = (lu, nombre, apellido) => {
-    const confirmacion = window.confirm(`¿Estás seguro de que quieres recuperar a ${nombre} ${apellido} (LU: ${lu})?`);
-    if (confirmacion) {
+  const confirmacion = window.confirm(`¿Estás seguro de que quieres recuperar a ${nombre} ${apellido} (LU: ${lu})?`);
+     if (confirmacion) {
       onRecuperar(lu);
     }
   };

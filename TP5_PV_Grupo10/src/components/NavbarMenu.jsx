@@ -1,12 +1,10 @@
-// src/components/NavbarMenu.jsx
 import React from 'react';
 import { Nav, Navbar, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const NavbarMenu = () => {
     return(
-        // Quitamos fixed="top". El Navbar ahora fluirá con el documento.
-        <Navbar bg='light' expand="md"> {/* <-- ¡Asegúrate de que NO tenga fixed="top"! */}
+        <Navbar bg='light' expand="md">
             <Container className='flex-column align-item-star align-item-md-center'>
                 <Navbar.Brand as={Link} to="/">Gestion Academica</Navbar.Brand>
 
@@ -19,7 +17,7 @@ const NavbarMenu = () => {
                         <Nav.Link as={Link} to="/">Inicio</Nav.Link>
                         <Nav.Link as={Link} to="/alumnos">Listado de alumnos</Nav.Link>
                         
-                        <Nav.Link as={Link} to="/carreras">Listado de carreras</Nav.Link>
+                        <Nav.Link as={Link} to="/alumnos/nuevo">Nuevo Alumno</Nav.Link>
                         <Nav.Link as={Link} to="/acerca">Nosotros</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
