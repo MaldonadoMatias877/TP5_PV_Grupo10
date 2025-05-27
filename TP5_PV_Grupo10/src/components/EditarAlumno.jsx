@@ -1,14 +1,12 @@
-// src/components/EditarAlumno.jsx
 import React, { useState, useEffect } from 'react';
 import { Container, Form, Button, Alert } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 
-// Recibe la lista completa de alumnos y la función onEditar como props
 function EditarAlumno({ alumnos, onEditar }) {
-    const { lu } = useParams(); // Obtiene el LU del alumno desde la URL
+    const { lu } = useParams(); 
     const navigate = useNavigate();
 
-    // Estado local para el formulario de edición
+    
     const [alumnoEditado, setAlumnoEditado] = useState({
         lu: '',
         nombre: '',
@@ -22,17 +20,14 @@ function EditarAlumno({ alumnos, onEditar }) {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-    // useEffect para cargar los datos del alumno cuando el componente se monta
-    // o cuando cambia el 'lu' de la URL o la lista de 'alumnos'
     useEffect(() => {
         const alumnoAEditar = alumnos.find(a => a.lu === lu);
         if (alumnoAEditar) {
-            setAlumnoEditado(alumnoAEditar); // Precarga el formulario con los datos del alumno
+            setAlumnoEditado(alumnoAEditar); 
         } else {
-            // Si el alumno no se encuentra, podrías redirigir o mostrar un error
-            navigate('/alumnos'); // Opcional: redirigir si el LU no existe
+            navigate('/alumnos'); 
         }
-    }, [lu, alumnos, navigate]); // Dependencias: lu, alumnos, navigate
+    }, [lu, alumnos, navigate]); 
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -40,14 +35,13 @@ function EditarAlumno({ alumnos, onEditar }) {
             ...alumnoEditado,
             [name]: value,
         });
-        setError(''); // Limpiar errores al cambiar un campo
-        setSuccess(''); // Limpiar éxito al cambiar un campo
+        setError(''); 
+        setSuccess(''); 
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Validación básica (puedes añadir más si es necesario)
         if (!alumnoEditado.lu || !alumnoEditado.nombre || !alumnoEditado.apellido || !alumnoEditado.email) {
             setError('Por favor, completa todos los campos obligatorios.');
             return;
@@ -83,7 +77,7 @@ function EditarAlumno({ alumnos, onEditar }) {
                         value={alumnoEditado.lu}
                         onChange={handleChange}
                         required
-                        readOnly // El LU no debería ser editable
+                        readOnly 
                     />
                 </Form.Group>
 

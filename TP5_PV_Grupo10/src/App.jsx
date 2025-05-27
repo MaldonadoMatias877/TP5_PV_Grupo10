@@ -1,6 +1,5 @@
-// src/App.jsx
 import React, { useState } from 'react';
-import { Routes, Route, Link, Outlet } from 'react-router-dom'; // Importa Outlet
+import { Routes, Route, Link, Outlet } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
 // Importa todos los componentes necesarios
@@ -11,9 +10,8 @@ import AgregarAlumno from './components/AgregarAlumno';
 import DetalleAlumno from './components/DetalleAlumno';
 import EditarAlumno from './components/EditarAlumno';
 import AlumnoEliminado from './components/AlumnoEliminado';
-
 import AcercaDeNosotros from './components/AcercaDeNosotros';
-import ListadoCarreras from './components/ListadoCarreras';
+
 
 // Componente Layout para la barra de navegación y el contenido de la ruta
 function Layout() {
@@ -101,7 +99,7 @@ function App() {
           <AlumnoEliminado alumnosEliminados={Array.isArray(alumnosEliminados) ? alumnosEliminados : []} onRecuperar={handleRecuperarAlumno} />
         } />
 
-        <Route path="carreras" element={<ListadoCarreras />} />
+        <Route path="alumnos/nuevo" element={<AgregarAlumno />} />
         <Route path="acerca" element={<AcercaDeNosotros />} />
       </Route>
     </Routes>

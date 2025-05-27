@@ -1,4 +1,3 @@
-// src/components/ListadoAlumnos.jsx
 import React from 'react';
 import { Container, Table, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';

@@ -62,7 +62,7 @@ function DetalleAlumno({ alumnosActivos, alumnosEliminados }) {
                     <Button variant="primary" onClick={() => navigate('/alumnos')}>
                         Volver al Listado Principal
                     </Button>
-                    {isAlumnoActivo && ( // Renderiza el botón Editar solo si es un alumno activo
+                    {isAlumnoActivo && ( 
                         <Button as={Link} to={`/alumnos/${alumno.lu}/editar`} variant="warning" className="ms-2">
                             Editar
                         </Button>
