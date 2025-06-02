@@ -11,7 +11,9 @@ import DetalleAlumno from './components/DetalleAlumno';
 import EditarAlumno from './components/EditarAlumno';
 import AlumnoEliminado from './components/AlumnoEliminado';
 import AcercaDeNosotros from './components/AcercaDeNosotros';
+import Footer from './components/Footer';
 
+import './styles/footer.css';// css del footer
 
 // Componente Layout para la barra de navegación y el contenido de la ruta
 function Layout() {
@@ -21,6 +23,7 @@ function Layout() {
       <div className='app-content-wrapper'>
         <Outlet /> {/* Aquí se renderizarán las rutas hijas */}
       </div>
+      <Footer/>
     </>
   );
 }
