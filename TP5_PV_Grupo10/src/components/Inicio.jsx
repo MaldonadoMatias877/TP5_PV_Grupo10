@@ -1,30 +1,60 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Carousel, Container } from 'react-bootstrap';
+import imagen1 from '../Images/code-1839406_640.jpg';
+import imagen2 from '../Images/earth-2254769_640.jpg';
+import imagen3 from '../Images/computer-1591018_640.jpg';
 
 function Inicio() {
-    
-    return(
+    return (
         <>
-            <Container className='text-center mt-5'>
-                <Row>
-                    <Col>
-                        <section>
-                            <h3>Seccion de Noticias</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur illo saepe, dignissimos quasi aliquid aliquam laudantium incidunt pariatur. Impedit ab sequi quia cum adipisci delectus pariatur magnam quisquam quasi molestiae?</p>
-                        </section>
-                    </Col>
+            <div className="mx-auto my-4" style={{ maxWidth: '900px' }}>
+                <Carousel>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={imagen1}
+                            alt="Imagen-Codigo"
+                        />
+                        <Carousel.Caption>
+                            <h3 style={{ color: 'skyblue', fontWeight: 'bold'}}>Aplicaciones escalables.</h3>
+                        </Carousel.Caption>
+                    </Carousel.Item>
 
-                    <Col>
-                        <section>
-                            <h3>Plataforma</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque laudantium sunt accusantium quasi nemo, facilis voluptates voluptatem dolorum fugit vel reiciendis earum ipsum, exercitationem maiores fugiat quaerat, eum numquam ipsam?</p>
-                        </section>
-                    </Col>
-                </Row>
-            </Container>
-           
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={imagen2}
+                            alt="Imagen-mundo-conectado"
+                        />
+                        <Carousel.Caption>
+                            <h3 style={{color: 'red', fontWeight: 'bold'}}>Conexión al mundo.</h3>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src={imagen3}
+                            alt="Imagen-Segurida-informatica"
+                        />
+                        <Carousel.Caption>
+                            <h3>Seguridad Informática</h3>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
+            </div>
+
+            <section className="my-5 text-center" style={{ paddingBottom: '5rem' }}>
+                <Container>
+                    <h2>Mas información</h2>
+                    <p>
+                        ¿Quieres formar parte de nuestro equipo? Puedes escribirnos por mensaje privado.
+
+                    </p>
+                </Container>
+            </section>
         </>
     );
-};
+}
 
 export default Inicio;

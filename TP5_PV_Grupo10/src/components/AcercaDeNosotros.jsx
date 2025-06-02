@@ -4,7 +4,7 @@ function AcercaDeNosotros() {
 
     return(
         <>
-            <Container>
+            <Container className='mt-5'>
                 <p>
                     Somos una compañia especializada en brindar soluciones tecnologicas innovadoras,
                     enfocadas en el desarrollo de aplicaciones web y moviles. Contamos con un equipo
